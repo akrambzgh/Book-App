@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Book Maker</title>
+
+    <!-- Font Awesome -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.0/css/all.min.css" rel="stylesheet" />
+    
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
+
+    <!-- Css File -->
+    <link rel="stylesheet" href="/dist/style.css" />
+
+</head>
+<body>
+<!-- Header -->
+    <header class="header">
+        <div class="container">
+            <h1>Book Maker <i class="fas fa-book-open"></i></h1>
+            <p>Make And Save Your Own Books</p>
+        </div>
+    </header>
+
+    <!-- Form -->
+    <div class="create-book">
+        <div class="container">
+            <div class="name-price">
+                <div class="name">
+                    <label for="name-input">Name <i class="fas fa-book"></i></label>
+                    <input type="text" id="name-input" placeholder="Name" />
+                </div>
+                <div class="price">
+                    <label for="name-input">Price <i class="fas fa-dollar-sign"></i></label>
+                    <input type="text" id="price-input" placeholder="Price" />
+                </div>
+            </div>
+            <div class="auther-parent">
+                <label for="auther-input">Auther <i class="fas fa-feather-alt"></i></label>
+                <input type="text" id="auther-input" class="auther" placeholder="Auther" />
+            </div>
+            <div class="catigory-parent">
+                <label for="catigory-input">Catygory <i class="fas fa-swatchbook"></i></label>
+                <input type="text" id="catigory-input" class="catigory" placeholder="Catigory">
+            </div>
+            <div class="add-button">
+                <button class="add" id="add-btn">Add Book <i class="fas fa-book-medical"></i></button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Books -->
+    <div class="books">
+        <div class="container">
+            <ul class="books-list">
+            </ul>
+        </div>
+    </div>
+
+    <!-- JavaScript File -->
+    <script src="/app/js/script.js"></script>
+</body>
+</html>

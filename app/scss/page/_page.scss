@@ -1,0 +1,228 @@
+// Header
+.header {
+    margin: 00px auto;
+    text-align: center;
+    background-color: #dddddd;
+    padding: 30px 0;
+    background-image: linear-gradient(-45deg, #63ace5, #2a4d69);
+
+    h1 {
+        color: #ffffff;
+        letter-spacing: 0px;
+        font-size: 40px;
+        font-weight: 300;
+        margin-bottom: 15px;
+        animation: letterSpace 1000ms linear alternate forwards
+    }
+    p {
+        color: #ffffff;
+        letter-spacing: 0px;
+        font-size: 18px;
+        font-weight: 300;
+        animation: letterSpace 1000ms ease alternate forwards;
+    }
+    
+    // Animation
+    @keyframes letterSpace {
+        0%  {
+        letter-spacing: 0px;
+        }
+        50% {
+        letter-spacing: 3px;
+        }
+        100% {
+        letter-spacing: 1px;
+        }
+    }
+    @include largeScreen() {
+        & {
+            p {
+                font-size: 25px;
+                letter-spacing: 0;
+            }
+            @keyframes letterSpace {
+                0% {
+                    letter-spacing: 0;
+                }
+                50% {
+                    letter-spacing: 15px;
+                }
+
+                100% {
+                    letter-spacing: 7px;
+                }
+            }
+        }
+    }
+}
+
+// Form
+.create-book {
+    margin-top: 20px;
+    .name-price {
+        flex-direction: column;
+        @include largeScreen() {
+            @include flex(space-between, center, row);
+        }
+        gap: 5px;
+        .name,
+        .price {
+            background-color: lighten($color: #63ace5, $amount: 25);
+            padding: 7px;
+            padding-bottom: 0;
+            border-radius: 7px;
+            margin-bottom: 15px;
+            @include largeScreen() {
+                width: 50%;
+                padding: 15px;
+                padding-bottom: 0;
+                margin-bottom: 0;
+            }
+            label {
+                display: block;
+                @include largeScreen() {
+                    margin-bottom: 15px;
+                }
+                i {
+                    margin-left: 5px;
+                    font-size: 18px;
+                    width: 25px;
+                    height: 25px;
+                    line-height: 25px;
+                    color: #2a4d69;
+                }
+            }
+            input {
+                background-color:lighten($color:#63ace5, $amount: 25);
+                display: block;
+                margin-top: 5px;
+                padding: 0;
+                padding-bottom: 5px;
+                width: 100%;
+                @include largeScreen() {
+                    width: 100%;
+                    font-size: 18px;
+                }
+            }
+        }
+    }
+    .auther-parent,
+    .catigory-parent {
+        @include largeScreen() {
+            padding: 15px;
+            padding-bottom: 0;
+        }
+        background-color: lighten($color: #63ace5, $amount: 25);
+        padding: 7px 7px 0 7px;
+        width: 100%;
+        margin-top: 10px;
+        border-radius: 7px;
+        label {
+            display: block;
+            @include largeScreen() {
+                margin-bottom: 15px;
+            }
+            i {
+                margin-left: 5px;
+                font-size: 18px;
+                width: 25px;
+                height: 25px;
+                line-height: 25px;
+                color: #2a4d69;
+            }
+        }
+        input {
+            width: 100%;
+            background-color: lighten($color: #63ace5, $amount: 25);
+            padding: 0;
+            padding-bottom: 5px;
+            @include largeScreen() {
+                font-size: 18px;
+            }
+        }
+        select {
+            width: 100%;
+            background-color: lighten($color: #63ace5, $amount: 25);
+            padding: 0;
+            padding-bottom: 5px;
+            border: 0;
+            padding-left: 0;
+            &:focus {
+                outline: none;
+            }
+            @include largeScreen() {
+                font-size: 18px;
+            }
+            option {
+                padding: 5px 0;
+                border-top: 1px solid #2a4d69;
+                display: block;
+            }
+        }
+    }
+    .add-button {
+        margin-top: 10px;
+        .add {
+            width: 100%;
+            padding: 10px;
+            border-radius: 10px;
+            border: 0;
+            border: 2px solid #2a4d69;
+            background-color: #2a4d69;
+            font-size: 17px;
+            color: #ffffff;
+            font-weight: 300;
+            cursor: pointer;
+            transition: 400ms;
+            i {
+                margin-left: 5px;
+            }
+            &:hover {
+                background-color: #ffffff;
+                color: #2a4d69;
+            }
+        }
+    }
+}
+
+// Books
+.books {
+    margin-top: 20px;
+    margin-bottom: 20px;
+    .books-list {
+        padding: 10px;
+        .book {
+            @include flex(space-between, center, column);
+            @include largeScreen() {
+                @include flex(space-between,center,row);
+            }
+            background-color: #a8e6ce;
+            margin-top: 7px;
+            .item {
+                border: 1px solid #2a4d69;
+                @include largeScreen() {
+                    border: 0;
+                    border-top: 1px solid #2a4d69;
+                    border-bottom: 1px solid #2a4d69;
+                    border-left: 1px solid #2a4d69;
+                }
+                width: 100%;
+                padding: 10px 15px;
+                font-size: 18px;
+                text-transform: uppercase;
+                overflow-x: scroll;
+                @include largeScreen() {
+                    &:last-child {
+                        border-right: 1px solid #2a4d69;
+                        border-top-right-radius: 7px;
+                        border-bottom-right-radius: 7px;
+                    }
+                    &:first-child {
+                        border-top-left-radius: 7px;
+                        border-bottom-left-radius: 7px;
+                    }
+                }
+            }
+        }
+    }
+}

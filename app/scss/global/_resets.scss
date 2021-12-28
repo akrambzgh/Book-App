@@ -1,0 +1,51 @@
+@import "../utils/mixin";
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p {
+    margin: 0;
+}
+
+ul {
+    list-style: none;
+    padding-left: 0;
+    margin: 0;
+}
+
+a {
+    text-decoration: none;
+}
+
+span,
+button,
+a {
+    display: block;
+}
+
+button,
+input {
+
+    &:focus {
+        outline: none;
+    }
+}
+
+input {
+    border: 0;
+    border-bottom: 2px solid #63ace5;
+
+    &::placeholder {
+        color: #2a4d69;
+        font-weight: 300;
+        font-size: 14px;
+        font-family: 'Poppins',
+        sans-serif;
+        @include largeScreen() {
+            font-size: 18px;
+        }
+    }
+}
